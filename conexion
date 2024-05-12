@@ -1,0 +1,33 @@
+<?php
+// Conexión a la base de datos
+$servername = "localhost"; // Cambia esto si tu servidor MySQL no está en localhost
+$username = "usuario"; // Cambia esto por el nombre de usuario de tu base de datos
+$password = "contraseña"; // Cambia esto por la contraseña de tu base de datos
+$dbname = "fichastec"; // Cambia esto por el nombre de tu base de datos
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Obtener datos del formulario
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$email = $_POST['email'];
+$telefono = $_POST['telefono'];
+
+// Insertar datos en la base de datos
+$sql = "INSERT INTO aspirantes (nombre, apellido, email, telefono) VALUES ('$nombre', '$apellido', '$email', '$telefono')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Registro exitoso";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Cerrar conexión
+$conn->close();
+?>
