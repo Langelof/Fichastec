@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Banner</title>
+  <style>
+      /* Estilos CSS para el banner */
+      .banner {
+          width: 100%;
+          height: auto;
+      }
+      /* Estilos CSS para el formulario */
+      .formulario {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          background: #f9f9f9;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+  </style>
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Fecha y Hora de Registro</title>
+    <script>
+        function capturarFechaHora() {
+            // Obtener la fecha y hora actual
+            var fechaHora = new Date();
+            // Formatear la fecha y hora en formato legible
+            var fechaHoraFormateada = fechaHora.getFullYear() + '-' + 
+                                      agregarCero(fechaHora.getMonth() + 1) + '-' + 
+                                      agregarCero(fechaHora.getDate()) + ' ' + 
+                                      agregarCero(fechaHora.getHours()) + ':' + 
+                                      agregarCero(fechaHora.getMinutes()) + ':' + 
+                                      agregarCero(fechaHora.getSeconds());
+            // Asignar la fecha y hora al campo oculto en el formulario
+            document.getElementById('fecha_hora_registro').value = fechaHoraFormateada;
+        }
+
+        function agregarCero(i) {
+            // Agregar un cero delante de números menores que 10
+            return (i < 10) ? '0' + i : i;
+        }
+    </script>
+
+</head>
+<body>
+  
+  <!-- Banner de imagen -->
+  <img src="ruta/a/tu/imagen/banner.jpg" alt="Banner" class="banner">
+
+  <form action="procesar_registro.php" method="post">
+    <h2>Formulario de Registro para Examen de Nuevo Ingreso</h2>
+    <h2>INSTITUTO TECNOLOGICO SUPERIOR ZACATECAS OCCIDENTE</h2>
+   
+    <label for="curp">CURP:</label>
+    <input type="text" id="apellido_p" name="apellido_p" required>
+
+    <label for="apellido_p">Apellido Paterno:</label>
+    <input type="text" id="apellido_p" name="apellido_p" required>
+
+    <label for="apellido_m">Apellido Materno:</label>
+    <input type="text" id="apellido_m" name="apellido_m" required>
+
+    <label for="nombre_aspirante">Nombre (s):</label>
+    <input type="text" id="nombre_aspirante" name="nombre_aspirante required>
+
+    <label for="foto">Fotografía:</label><br>
+    <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo" required>
+      <option value="hombre">Hombre</option>
+      <option value="mujer">Mujer</option>
+      <option value="prefiero_no">Prefiero no decirlo</option>
+    </select>
+
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        <br><br>
+
+    
+    <label for="lugar_nac">Lugar de Nacimiento:</label>
+        <input type="text" id="apellido_p" name="apellido_p" required>
+
+
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="whatsapp">No. Whatsapp:</label>
+    <input type="whatsapp" id="whatsapp" name="whatsapp" required>
+
+    <label for="domicilio">Domicilio:</label>
+    <input type="domicilio" id="domicilio" name="domicilio" required>
+
+    <label for="colonia">Colonia:</label>
+    <input type="colonia" id="colonia" name="colonia" required>
+
+    <label for="municipio">Municipio:</label>
+    <input type="municipio" id="municipio" name="municipio" required>
+
+    <label for="estado">Estado:</label>
+    <input type="estado" id="estado" name="estado" required>
+
+
+    <label for="escuelaproc">Escuela de Procedencia:</label>
+    <select id="escuelaproc" name="escuelaproc" required>
+      <option value="CBTIS104">CBTIS 104 | SOMBRERETE</option>
+      <option value="CBTIS109">CBTIS 109 | VILLA UNIÓN DGO</option>
+      <option value="COBASO">COLEGIO DE BACHILLERES | SOMBRERETE</option>
+      <option value="COBASA">COLEGIO DE BACHILLERES | SAIN ALTO</option>
+      <option value="COBAJI">COLEGIO DE BACHILLERES | JIMÉNEZ DEL TEÚL</option>
+      <option value="COBACH">COLEGIO DE BACHILLERES | CHALCHIHUITES</option>
+      <option value="CEB6_5">CEB 6/5 | VILLA UNIÓN DURANGO</option>
+      <option value="TELEB_SNM">TELEBACHILLERATO COMUNITARIO DE SAN MARTÍN</option>
+      <option value="PREPA_ADOLOPM">PREPARATORIA ESTATAL “ADOLFO LÓPEZ MATEOS”</option>
+      <option value="COBAED27">COBAED 27 | VICENTE GUERRERO DURANGO</option>
+      <option value="CBTIS96">CBTIS 96 | VICENTE GUERRERO DURANGO</option>
+      <option value="CECYTE03">CECyTE 03 SÚCHIL DURANGO</option>
+      <option value="OTRA">OTRA</option>
+     
+    </select>
+
+    <label for="carrera">Carrera Solicitada:</label>
+    <select id="carrera" name="carrera" required>
+      <option value="Ing_Sis">Ingeniería en Sistemas Computacionales</option>
+      <option value="Ing_Ind">Ingeniería Industrial</option>
+      <option value="Ing_GE">Ingeniería en Gestión Empresarial</option>
+      <option value="Ing_Min">Ingeniería en Minería</option>
+      <option value="Ing_Agro">Ingeniería en Agronomía</option>
+      <option value="LAdm">Licenciatura en Administración</option>
+      <option value="Ing_Ind_Semi">Ingeniería Industrial SEMIESCOLARIZADO</option>
+      <option value="Ing_GE_Semi">Ingeniería en Gestión Empresarial SEMIESCOLARIZADO</option>
+    </select>
+
+    
+    <label for="medio">Medio por el que se enteró de nuestra Oferta Educativa:</label>
+    <select id="medio" name="medio" required>
+      <option value="facebook">FACEBOOK</option>
+      <option value="instagram">Instagram</option>
+      <option value="tiktok">Tiktok</option>
+      <option value="familiar">Por medio de un familiar</option>
+      <option value="amigo">Por medio de un amigo</option>
+      <option value="visita">Cuando visitaron mi escuela</option>
+      <option value="visite_tec">Visité el Tecnológico</option>
+      <option value="radio">Radio</option>
+      <option value="perifoneo">Perifoneo</option>
+      <option value="publicidadimp">Poster, folletos, flayers</option>
+      <option value="OTRA">OTRA</option>
+     
+    </select>
+
+    <input type="hidden" id="fecha_hora_registro" name="fecha_hora_registro">
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>
